@@ -16,6 +16,15 @@ class User
     #[ORM\Column(type: 'string', length: 255)]
     private $name;
 
+    #[ORM\Column(type: 'string', length: 255)]
+    private $Password;
+
+    #[ORM\Column(type: 'array')]
+    private $role = [];
+
+    #[ORM\Column(type: 'boolean')]
+    private $isVerified;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -29,6 +38,42 @@ class User
     public function setName(string $name): self
     {
         $this->name = $name;
+
+        return $this;
+    }
+
+    public function getPassword(): ?string
+    {
+        return $this->Password;
+    }
+
+    public function setPassword(string $Password): self
+    {
+        $this->Password = $Password;
+
+        return $this;
+    }
+
+    public function getRole(): ?array
+    {
+        return $this->role;
+    }
+
+    public function setRole(array $role): self
+    {
+        $this->role = $role;
+
+        return $this;
+    }
+
+    public function getIsVerified(): ?bool
+    {
+        return $this->isVerified;
+    }
+
+    public function setIsVerified(bool $isVerified): self
+    {
+        $this->isVerified = $isVerified;
 
         return $this;
     }
