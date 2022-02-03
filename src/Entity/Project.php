@@ -16,10 +16,7 @@ class Project
     #[ORM\Column(type: 'string', length: 255)]
     private $name;
 
-    #[ORM\Column(type: 'string', length: 500)]
-    private $description;
-
-    #[ORM\Column(type: 'date')]
+    #[ORM\Column(type: 'string', length: 255)]
     private $date;
 
     #[ORM\Column(type: 'string', length: 500)]
@@ -27,6 +24,9 @@ class Project
 
     #[ORM\Column(type: 'string', length: 255)]
     private $image;
+
+    #[ORM\Column(type: 'text')]
+    private $description;
 
     public function getId(): ?int
     {
@@ -45,24 +45,12 @@ class Project
         return $this;
     }
 
-    public function getDescription(): ?string
-    {
-        return $this->description;
-    }
-
-    public function setDescription(string $description): self
-    {
-        $this->description = $description;
-
-        return $this;
-    }
-
-    public function getDate(): ?\DateTimeInterface
+    public function getDate(): ?string
     {
         return $this->date;
     }
 
-    public function setDate(\DateTimeInterface $date): self
+    public function setDate(string $date): self
     {
         $this->date = $date;
 
@@ -89,6 +77,18 @@ class Project
     public function setImage(string $image): self
     {
         $this->image = $image;
+
+        return $this;
+    }
+
+    public function getDescription(): ?string
+    {
+        return $this->description;
+    }
+
+    public function setDescription(string $description): self
+    {
+        $this->description = $description;
 
         return $this;
     }
