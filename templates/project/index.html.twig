@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Hello ProjectController!{% endblock %}
+{% block title %}Mes projets !{% endblock %}
 
 {% block body %}
 <style>
@@ -8,13 +8,13 @@
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
-<div class="example-wrapper">
-    <h1>Hello {{ controller_name }}! ✅</h1>
+<div class="center">
+    <h1>Retrouvez mes différents projets sur mon <a href="https://github.com/BilalAmiche" target="_blank">github !</a></h1>
+</div>
 
-    This friendly message is coming from:
-    <ul>
-        <li>Your controller at <code><a href="{{ '/home/wilder/Checkpoint/Checkpoint_4/Checkpoint_4/src/Controller/ProjectController.php'|file_link(0) }}">src/Controller/ProjectController.php</a></code></li>
-        <li>Your template at <code><a href="{{ '/home/wilder/Checkpoint/Checkpoint_4/Checkpoint_4/templates/project/index.html.twig'|file_link(0) }}">templates/project/index.html.twig</a></code></li>
-    </ul>
+<div class="example-wrapper">
+    {% for project in projects %}
+        <li><a href="{{ path("project_show", { id: project.id }) }}">{{ project.name }}</li>
+    {% endfor %}
 </div>
 {% endblock %}

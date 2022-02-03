@@ -1,6 +1,6 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Mon profil !{% endblock %}
+{% block title %}{{ project.name }}{% endblock %}
 
 {% block body %}
 <style>
@@ -8,8 +8,9 @@
     .example-wrapper code { background: #F5F5F5; padding: 2px 6px; }
 </style>
 
-<div class="center">
-    <h1>Mon parcours</h1>
-    <p>Random bullshit</p>
-</div>
+    <li>{{ project.date}}</li>
+    <li>{{ project.name }}</li>
+    <li>{{ project.description }}</li>
+    <li>{{ project.lien }}</li>
+
 {% endblock %}
