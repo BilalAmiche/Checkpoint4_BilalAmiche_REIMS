@@ -7,8 +7,9 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
-use Symfony\Component\Form\FormTypeInterface;
-use Doctrine\DBAL\Types\DateType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
+
 
 class ProjectType extends AbstractType
 {
@@ -17,7 +18,8 @@ class ProjectType extends AbstractType
         $builder
         ->add('name', TextType::class)
         ->add('description', TextType::class)
-        ->add('date', DateType::class)
+        ->add('date', DateType::class, [
+            'widget' => 'single_text',])
         ->add('lien', TextType::class)
         ->add('image', TextType::class)
         ;

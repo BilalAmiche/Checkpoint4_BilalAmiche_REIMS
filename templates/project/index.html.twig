@@ -17,4 +17,9 @@
         <li><a href="{{ path("project_show", { id: project.id }) }}">{{ project.name }}</li>
     {% endfor %}
 </div>
+{% if app.user %}
+    {% if 'ROLE_ADMIN' in app.user.roles %}
+        <a href="{{ path('project_new') }}" class="add">Ajouter un projet</a>
+    {% endif %}
+{% endif %}
 {% endblock %}

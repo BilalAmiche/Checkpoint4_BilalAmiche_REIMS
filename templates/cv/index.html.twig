@@ -13,4 +13,8 @@
         <li>{{ skills.name }} {{ skills.description }}</li>
     {% endfor %}
 </div>
+
+{% if 'ROLE_ADMIN' in app.user.roles %}
+    <a href="{{ path('skills_new') }}" class="add">Ajouter un projet</a>
+{% endif %}
 {% endblock %}
