@@ -12,6 +12,10 @@
     <h1>Bilal Amiche</h1>
     <h2>Développeur web PHP-Symfony</h2>
     <p>découvrez mon parcours et mes compétences</p>
-    <button href={{ path('app_logout') }}>déconnection</button>
 </div>
+{% if app.user %}
+    {% if 'ROLE_ADMIN' in app.user.roles %}
+    <a href={{ path('app_logout') }}>déconnection</button>
+    {% endif %}
+{% endif %}
 {% endblock %}

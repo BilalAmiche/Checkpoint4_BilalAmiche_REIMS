@@ -59,7 +59,7 @@ class SkillsController extends AbstractController
         if ($form->isSubmitted() && $form->isValid()) {
             $entityManager->flush();
 
-            return $this->redirectToRoute('skills_index', [], Response::HTTP_SEE_OTHER);
+            return $this->redirectToRoute('cv', [], Response::HTTP_SEE_OTHER);
         }
 
         return $this->renderForm('skills/edit.html.twig', [

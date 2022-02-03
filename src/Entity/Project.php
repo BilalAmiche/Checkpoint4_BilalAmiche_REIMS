@@ -16,7 +16,7 @@ class Project
     #[ORM\Column(type: 'string', length: 255)]
     private $name;
 
-    #[ORM\Column(type: 'string', length: 255)]
+    #[ORM\Column(type: 'date', length: 255)]
     private $date;
 
     #[ORM\Column(type: 'string', length: 500)]
@@ -50,7 +50,7 @@ class Project
         return $this->date;
     }
 
-    public function setDate(string $date): self
+    public function setDate($date): self
     {
         $this->date = $date;
 
